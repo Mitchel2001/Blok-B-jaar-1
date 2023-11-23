@@ -7,14 +7,14 @@ db = mysql.connector.connect(
   host="localhost",
   user="root",
   password="",
-  database="kenteken"
+  database="goldenbulls"
 )
 
 # Maak een cursor-object
 cursor = db.cursor()
 
 # Voer de SQL-query uit
-cursor.execute("SELECT kenteken FROM gegevens")
+cursor.execute("SELECT kenteken FROM kentekens")
 
 # Haal de gegevens op
 kenteken = cursor.fetchone()[0]
