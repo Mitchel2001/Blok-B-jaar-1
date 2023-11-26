@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Het Groene Gras</div>
+        <div>
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <div class="reservering_btn_container">
+            <li class="reservering_btn"><a href="#Boek uw vakantie">Boek uw Vakantie</a></li>
+          </div>
+          </ul>
+        </div>
+      </nav>
+      <nav id="hamburger-nav">
+        <div class="logo">Het Groene Gras</div>
+        <div class="hamburger-menu">
+          <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <li class="hamburger_icon_container"><a href="#Reserveren" onclick="toggleMenu()">Boek Mijn Vakantie</a></li>
+          </ul>
+        </div>
+        <script>
+          function toggleMenu() {
+    const menu = document.querySelector(".menu-links");
+    const icon = document.querySelector(".hamburger-icon");
+    menu.classList.toggle("open");
+    icon.classList.toggle("open");
+  }
+        </script>
+      </nav>
+      <div>
+      <img class="campingpic" src="assets/campingpic2.jpg" alt="campingpic 2">
+      </div>
+</body>
+<script src="script.js"></script>
+</html>
