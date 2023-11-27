@@ -1,6 +1,10 @@
 import cv2
 import pytesseract
 import mysql.connector
+from datetime import date
+
+
+current_date = date.today()
 
 # Maak verbinding met de database
 db = mysql.connector.connect(
@@ -14,7 +18,7 @@ db = mysql.connector.connect(
 cursor = db.cursor()
 
 # Voer de SQL-query uit
-cursor.execute("SELECT kenteken FROM kentekens")
+cursor.execute(f"SELECT kenteken FROM kentekens WHERE begin_datum <= '{current_date}' AND eind_datum > '{current_date}'")
 
 # Haal de gegevens op
 kenteken = cursor.fetchone()[0]
