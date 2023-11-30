@@ -10,7 +10,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #dfd5c3;
+  background-color: #dfd5c3 !important;
 }
 
 html {
@@ -41,6 +41,7 @@ nav {
   height: 17vh;
   background-color: rgb(41, 59, 50);
   margin-top: 40px;
+  /* position: fixed; */
 }
 
 .nav-links {
@@ -50,9 +51,9 @@ nav {
 }
 
 a {
-  color: #dfd5c3;
-  text-decoration: none;
-  text-decoration-color: white;
+  color: #dfd5c3 !important;
+  text-decoration: none !important;
+  text-decoration-color: white !important;
 }
 
 a:hover {
@@ -188,9 +189,10 @@ height: 550px;
   margin: 50px;
 }
 
-.intro-pic {
- height: 60vh;
+.camping-pic {
+ height: 58vh;
  width: 700px;
+ margin: 7px;
 }
 
 footer {
@@ -209,4 +211,66 @@ footer {
 }
 .serial-number {
   color: #dfd5c3;
+}
+
+/* media queries */
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+  }
+  .campingpic {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .campingpic{
+    height: 200px;
+  }
+}
+
+/* PAUL */
+
+
+
+button{
+  background-color: #b78239 !important;
+}
+
+.custom-bg{
+  background-color: #b78239 !important;
+}
+
+.custom-bg:hover{
+  background-color: #92682D !important;
+}
+
+.reserveren-formaat{
+  
+  z-index: 2;
+  position: relative;
+}
+
+@media screen and (max-width:575px) {
+  .reserveren-formaat{
+      margin-top: 25px;
+      padding: 0 35px;
+  }
+}
+  
+.h-line{
+  width: 150px;
+  margin: 0 auto;
+  height: 1.7px;
+}
+
+.container {
+  background-color: white;
+}
+
+.faciliteiten-container {
+  background-color: #dfd5c3;
 }
