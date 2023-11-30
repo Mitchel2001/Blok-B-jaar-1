@@ -164,7 +164,7 @@ height: 550px;
 .reservering_btn_container{
   background-color: #b78239;
   width: 230px;
-  justify-items: center;
+  text-align: center;
 }
 
 .reservering_btn_container:hover{
@@ -173,4 +173,40 @@ height: 550px;
 }
 .hamburger_icon_container {
   background-color: #b78239;
+}
+
+
+.intro-container {
+  display: flex;
+  text-align: center;
+  height: 60vh;
+  background-color: white;
+  margin: 50px;
+}
+
+.intro-text--title-container {
+  margin: 50px;
+}
+
+.intro-pic {
+ height: 60vh;
+ width: 700px;
+}
+
+footer {
+  background-color: rgb(41, 59, 50);
+  padding: 20px;
+  text-align: center;
+  height: 400px;
+}
+
+.logo-text {
+ color: #dfd5c3;
+}
+
+.footer-text {
+  color: #dfd5c3;
+}
+.serial-number {
+  color: #dfd5c3;
 }
