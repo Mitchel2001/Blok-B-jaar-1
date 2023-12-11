@@ -18,6 +18,9 @@ session_start();
 
 echo 'Welcome, ' . $_SESSION['user_name'];
 echo 'Your email is: ' . $_SESSION['user_email'];
+echo 'Your phonenumber is: ' . $_SESSION['user_number'];
+echo 'Your role is: ' . $_SESSION['user_role'];
+echo 'Your password is: ' . $_SESSION['user_password'];
 ?>
     <nav id="desktop-nav">
         <div class="logo">Het Groene Gras</div>
