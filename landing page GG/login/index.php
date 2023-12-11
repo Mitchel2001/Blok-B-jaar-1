@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -12,6 +12,13 @@
     <script src="script.js"></script>
 </head>
 <body>
+
+<?php
+session_start();
+
+echo 'Welcome, ' . $_SESSION['user_name'];
+echo 'Your email is: ' . $_SESSION['user_email'];
+?>
     <nav id="desktop-nav">
         <div class="logo">Het Groene Gras</div>
         <div>
@@ -19,6 +26,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
             <li><a href="login/login.php">Login</a></li>
             <div class="reservering_btn_container">
             <li class="reservering_btn"><a href="#Boek uw vakantie">Boek uw Vakantie</a></li>
