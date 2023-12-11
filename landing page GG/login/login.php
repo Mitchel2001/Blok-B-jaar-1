@@ -16,8 +16,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($user && password_verify($password, $user['password'])) {
     // Password is correct, save the user's data in the session
     $_SESSION['user_id'] = $user['id'];
-    $_SESSION['user_name'] = $user['name'];
+    $_SESSION['user_password'] = $user['password'];
     $_SESSION['user_email'] = $user['email'];
+    $_SESSION['user_name'] = $user['first_name'];
+    $_SESSION['user_last'] = $user['last_name'];
+    $_SESSION['user_number'] = $user['phone_number'];
+    $_SESSION['user_birthdate'] = $user['birthdate'];
+    $_SESSION['user_addres'] = $user['addres'];
     $_SESSION['user_role'] = $user['role']; // Assuming the role is stored in 'role' column
 
     // Redirect based on role

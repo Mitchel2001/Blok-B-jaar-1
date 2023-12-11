@@ -25,7 +25,7 @@ session_start();
       <li class="edit active"><a href="#">Edit Website</a></li>
       <li class="write active"><a href="#">Write news</a></li>
       <li class="comments active"><a href="#">Ads</a></li>
-      <li class="users active"><a href="#">Manage Users</a></li>
+      <li class="users active"><a href="/adminpanel/manageusers/index.php">Manage Users</a></li>
       <li class="users active"><a href="/adminpanel/kenteken/index.php">Kenteken</a></li>
     </ul>
   </nav>
