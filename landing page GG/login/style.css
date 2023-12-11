@@ -85,5 +85,11 @@ body {
   font-size: 12px;
 }
 
+.success {
+  color: green;
+}
+.error {
+  color: red;
+}
 
 
