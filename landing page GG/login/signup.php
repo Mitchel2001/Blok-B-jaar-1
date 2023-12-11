@@ -5,7 +5,6 @@ $message = '';
 $msg_type = 'success';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Haal de gegevens uit het formulier
   $email = $_POST['email'];
   $password = $_POST['password'];
   $first_name = $_POST['first_name'];
@@ -13,6 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $phone_number = $_POST['phone_number'];
   $birthdate = $_POST['birthdate'];
   $address = $_POST['address'];
+
+  $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $message = "Invalid email format";
@@ -27,26 +28,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email_check = "SELECT * FROM users WHERE email = '$email'";
   $result = $conn->query($email_check);
 
-if ($result->num_rows > 0) {
-  // Als de e-mail al bestaat, toon een foutmelding
-  $message = "Email already exists";
-  $msg_type = 'error';
-
-  // Maak de SQL-query
-  $sql = "INSERT INTO users (email, password, first_name, last_name, phone_number, birthdate, address)
-  VALUES ('$email', '$password', '$first_name', '$last_name', '$phone_number', '$birthdate', '$address')";
-
-  // Voer de query uit
-  if ($conn->query($sql) === TRUE) {
-    $message = "New record created successfully";
-    $msg_type = 'success';
-    header('Location: login.php'); 
-    exit(); 
-  } else {
-    $message = "Error: " . $sql . "<br>" . $conn->error;
+  if ($result->num_rows > 0) {
+    // Als de e-mail al bestaat, toon een foutmelding
+    $message = "Email already exists";
     $msg_type = 'error';
-  }
+  } else {
+    // Maak de SQL-query
+    $sql = "INSERT INTO users (email, password, first_name, last_name, phone_number, birthdate, address)
+    VALUES ('$email', '$hashed_password', '$first_name', '$last_name', '$phone_number', '$birthdate', '$address')";
 
+    // Voer de query uit
+    if ($conn->query($sql) === TRUE) {
+      $message = "New record created successfully";
+      $msg_type = 'success';
+      header('Location: login.php'); 
+      exit(); 
+    } else {
+      $message = "Error: " . $sql . "<br>" . $conn->error;
+      $msg_type = 'error';
+    }
+  }
   // Sluit de verbinding
   $conn->close();
 }
@@ -103,5 +104,4 @@ if ($result->num_rows > 0) {
     <a href="login.php" class="signup-link">Al een account? Login!</a>
   </div>
 </body>
-</html>
-                        
+</html> 

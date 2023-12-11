@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include '../index.html'; ?>
+<?php include '../index.php'; ?>
 
 <head>
     <meta charset="UTF-8">
