@@ -30,7 +30,7 @@ echo 'Your password is: ' . $_SESSION['user_password'];
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="login/login.php">Login</a></li>
+            <li><a href="logout.php">Logout</a></li>
             <div class="reservering_btn_container">
             <li class="reservering_btn"><a href="#Boek uw vakantie">Boek uw Vakantie</a></li>
           </div>
