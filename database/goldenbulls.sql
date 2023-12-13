@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 23 nov 2023 om 20:09
+-- Gegenereerd op: 13 dec 2023 om 09:17
 -- Serverversie: 8.0.31
 -- PHP-versie: 8.0.26
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `kentekens` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uk_kenteken` (`kenteken`),
   KEY `idx_datum` (`begin_datum`,`eind_datum`)
-) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `kentekens`
@@ -67,7 +67,39 @@ INSERT INTO `kentekens` (`id`, `naam`, `kenteken`, `begin_datum`, `eind_datum`) 
 (29, 'Penelope Brass', 'MN-78-OP', '2024-02-26', '2024-03-10'),
 (30, 'Quinn Bronze', 'QR-90-ST', '2024-03-02', '2024-03-16'),
 (31, 'Riley Aluminum', 'UV-01-WX', '2024-03-07', '2024-03-21'),
-(34, 'janwillem', 'SD-34-SD', '2023-11-23', '2023-11-26');
+(34, 'janwillem', 'SD-34-SD', '2023-11-23', '2023-11-26'),
+(36, 'testt', 'ZD-465-H', '2023-11-26', '2023-11-30'),
+(37, 'Mams auto', 'K-971-SJ', '2023-11-28', '2023-12-09');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `password` varchar(155) DEFAULT NULL,
+  `email` varchar(155) DEFAULT NULL,
+  `first_name` varchar(155) DEFAULT NULL,
+  `last_name` varchar(155) DEFAULT NULL,
+  `phone_number` varchar(20) DEFAULT NULL,
+  `birthdate` date DEFAULT NULL,
+  `address` varchar(155) DEFAULT NULL,
+  `role` enum('guest','employee','owner') DEFAULT 'guest',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `unique_email` (`email`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `users`
+--
+
+INSERT INTO `users` (`id`, `password`, `email`, `first_name`, `last_name`, `phone_number`, `birthdate`, `address`, `role`) VALUES
+(1, '$2y$10$i3ZQaZfcVXf1J/PQ0sOXsu5AsO5hq2gB4ngC5xnlAk2oCissYclCC', '123@123', 'mitchel', 'Wingelaar', '0614798368', '2023-12-13', 'conferanseperenlaan ', 'guest'),
+(2, '$2y$10$8pB7Mna3hxmgG8IhRJ/TZ.aR/NYBkdzVOUdbobyJGzi.B93Znklw.', '1234@1234', 'mitchell', 'Wingelaarr', '06147983688', '2023-12-15', 'conferanseperenlaann ', 'owner');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
