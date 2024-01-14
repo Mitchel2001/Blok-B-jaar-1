@@ -1,6 +1,6 @@
 <?php
 session_start();
 session_destroy();
-header('Location: ../landing%20page%20GG/login/login.php');
+header('Location: ../landingpageGG/login/login.php');
 exit;
 ?>

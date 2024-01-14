@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylee.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="paul.css" />  -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Het Groene Gras</div>
+        <div>
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="verblijf.html">Verblijf</a></li>
+            <li><a href="http://boerberrtttttt/landingpageGG/login/login.php">Login</a></li>
+            <div class="reservering_btn_container">
+            <li class="reservering_btn"><a href="#Boek uw vakantie">Boek uw Vakantie</a></li>
+          </div>
+          </ul>
+        </div>
+      </nav>
+      <nav id="hamburger-nav">
+        <div class="logo">Het Groene Gras</div>
+        <div class="hamburger-menu">
+          <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <li class="hamburger_icon_container"><a href="#Reserveren" onclick="toggleMenu()">Boek Mijn Vakantie</a></li>
+          </ul>
+        </div>
+</nav>
+ <div>
+ <img class="campingpic" src="assets/campingpic2.jpg" alt="campingpic 2">
+ </div>
+
+  
+</head>
+<body>
+  <div class="main">
+      <h1>Verblijf plaatsen</h1>
+      <select id="filter" onchange="generateCards()">
+          <option value="all">All</option>
+          <option value="vakantiehuisjes">Vakantiehuisjes</option>
+          <option value="caravanplekken">Caravan</option>
+      </select>
+      <ul id="cards" class="cards">
+          <!-- Kaarten worden hier dynamisch gegenereerd -->
+      </ul>
+  </div>
+
+  <script>
+    let allData = [];
+
+    fetch('http://localhost:3000/verblijf')
+      .then(response => response.json())
+      .then(data => {
+        allData = data;
+        generateCards();
+      })
+      .catch(error => console.error('Error:', error));
+
+    function generateCards() {
+      const filter = document.getElementById('filter').value;
+      const filteredData = allData.filter(row => filter === 'all' || row.tabel === filter);
+      const cards = document.getElementById('cards');
+      cards.innerHTML = '';
+      filteredData.sort(() => Math.random() - 0.5);
+      filteredData.forEach(row => {
+          const imageUrl = row.tabel === 'vakantiehuisjes' ? 'assets/500x300.webp' : 'assets/caravan.jpg';
+          const card = `
+              <li class="cards_item">
+                  <div class="card">
+                      <div class="card_image"><img src="${imageUrl}"></div>
+                      <div class="card_content">
+                          <h2 class="card_title">${row.naam}</h2>
+                          <p class="card_text">${row.beschrijving}</p>
+                          <p class="card_text">Prijs: ${row.prijs}</p>
+                          <p class="card_text">Beschikbaar: ${row.beschikbaar}</p>
+                          <button class="btn card_btn">Read More</button>
+                      </div>
+                  </div>
+              </li>
+          `;
+          cards.innerHTML += card;
+      });
+    }
+  </script>
+</body>
+</html>

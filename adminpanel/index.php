@@ -15,7 +15,7 @@ session_start();
     <ul class="utilities">
       <br>
       <li class="users"><a href="/adminpanel/account/account.php">My Account</a></li>
-      <li class="logout warn"><a href="/landing%20page%20GG/login/login.php">Log Out</a></li>
+      <li class="logout warn"><a href="/landingpageGG/login/login.php">Log Out</a></li>
     </ul>
   </header>
   
