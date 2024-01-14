@@ -18,8 +18,8 @@
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="login/login.php">Login</a></li>
+            <li><a href="verblijf.html">Verblijf</a></li>
+            <li><a href="http://boerberrtttttt/landingpageGG/login/login.php">Login</a></li>
             <div class="reservering_btn_container">
             <li class="reservering_btn"><a href="#Boek uw vakantie">Boek uw Vakantie</a></li>
           </div>
@@ -212,18 +212,60 @@
 </body>
 <script src="script.js"></script>
 <footer>
+     <!-- Andere head-elementen hier -->
+     <style>
+        .footer h3 {
+            margin-bottom: 10px;
+        }
+        .subscribe-form {
+            display: inline-block;
+            text-align: left;
+        }
+        .subscribe-form input[type="email"] {
+            padding: 5px;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+        .subscribe-form input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .subscribe-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
     <div class="footer">
-      <div class="footer-content">
-        <div class="footer-section about">
-          <h1 class="logo-text"><span>Het Groene</span>Gras</h1>
-          <p class="footer-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            voluptatum, quibusdam, voluptate, quos doloribus voluptas
-            voluptatibus quod quia quae voluptatem quas. Quisquam, voluptas
-            voluptatibus. Quisquam, voluptas voluptatibus.
-          </p>
-          <div class="contact">
-            <span><i class="serial-number"></i> &nbsp; 123-456-789</span>
-            <span><i class="fas fa-envelope"></i> &nbsp;
-</footer>
+        <h3>Subscribe to our Newsletter</h3>
+        <form class="subscribe-form">
+            <input type="email" name="email" placeholder="Your Email Address">
+            <input type="submit" value="Subscribe">
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.subscribe-form').on('submit', function(e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: '/subscribe',
+                method: 'post',
+                data: $(this).serialize(),
+                success: function() {
+                    alert('Subscription successful!');
+                },
+                error: function() {
+                    alert('An error occurred. Please try again.');
+                }
+            });
+        });
+    });
+    </script>
+</body>
 </html>
+</footer>
