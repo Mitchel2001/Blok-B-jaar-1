@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="stylee.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- <link rel="stylesheet" type="text/css" href="paul.css" />  -->
     <script src="script.js"></script>
+    <script src="chatbot.js"></script>
 </head>
 <body>
     <nav id="desktop-nav">
-        <div class="logo">Het Groene Gras</div>
+        <div  class="logo">Het Groene Gras</div>
         <div>
           <ul class="nav-links">
-            <li><a href="#about">About</a></li>
+            <li><a href="http://localhost:3000/">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="verblijf.html">Verblijf</a></li>
             <li><a href="http://boerberrtttttt/landingpageGG/login/login.php">Login</a></li>
@@ -100,5 +102,32 @@
       });
     }
   </script>
+
+<div id="chat-circle" class="btn btn-raised">
+  <div id="chat-overlay"></div>
+  <i class="material-icons">chat_bubble</i>
+</div>
+
+<div class="chat-box">
+<div class="chat-box-header">
+ChatBot
+<span class="chat-box-toggle"><i class="material-icons">close</i></span>
+</div>
+<div class="chat-box-body">
+<div class="chat-box-overlay">   
+</div>
+<div class="chat-logs">
+ 
+</div>
+</div>
+<div class="chat-input">      
+<form>
+  <input type="text" id="chat-input" placeholder="Send a message..."/>
+<button type="submit" class="chat-submit" id="chat-submit"><i class="material-icons">send</i></button>
+</form>      
+</div>
+</div>
+</div>
+<script src="chatbot.js"></script>
 </body>
 </html>
