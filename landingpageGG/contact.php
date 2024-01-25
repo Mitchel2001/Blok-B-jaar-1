@@ -15,19 +15,23 @@
 <body>
 
 <nav id="desktop-nav">
-    <div class="logo">Het Groene Gras</div>
-    <div>
-      <ul class="nav-links">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="Over.html">Over ons</a></li>
-        <li><a href="faciliteiten.html">faciliteiten</a></li>
-        <li><a href="omgeving.html">Omgeving</a></li>
-        <div class="reservering_btn_container">
-        <li class="reservering_btn"><a href="#Boek uw vakantie">Boek uw Vakantie</a></li>
-      </div>
-      </ul>
-    </div>
-  </nav>
+        <a href="http://localhost:3000/index.html">
+            <div class="logo">Het Groene Gras</div>
+        </a>
+        <div>
+          <ul class="nav-links">
+            <li><a href="http://localhost:3000/Over.html">Over ons</a></li>
+            <li><a href="http://localhost:3000/faciliteiten.html">faciliteiten</a></li>
+            <li><a href="http://localhost:3000/omgeving.html">omgeving</a></li>
+            <li><a href="http://localhost:3000/verblijf.html">Verblijf</a></li>
+            <li><a href="http://boerberrtttttt/landingpageGG/login/login.php">Login</a></li>
+            <li><a href="http://boerberrtttttt/landingpageGG/contact.php">contact</a></li>
+            <div class="reservering_btn_container">
+            <li class="reservering_btn"><a href="#Boek uw vakantie">Boek uw Vakantie</a></li>
+          </div>
+          </ul>
+        </div>
+      </nav>
   <nav id="hamburger-nav">
     <div class="logo">Het Groene Gras</div>
     <div class="hamburger-menu">
