@@ -27,6 +27,7 @@ session_start();
       <li class="comments active"><a href="#">Ads</a></li>
       <li class="users active"><a href="/adminpanel/manageusers/index.php">Manage Users</a></li>
       <li class="users active"><a href="/adminpanel/kenteken/index.php">Kenteken</a></li>
+      <li class="users active"><a href="userqueries.php">Contact form</a></li>
     </ul>
   </nav>
    
